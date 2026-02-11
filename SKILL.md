@@ -1,6 +1,7 @@
 ---
 name: ragora
 description: Use Ragora MCP tools and REST API to discover, search, and synthesize answers from knowledge bases. Trigger when the user asks for grounded answers from Ragora collections, cross-collection comparison, source-backed summaries, due diligence research, or verification using marketplace data.
+metadata: {"openclaw": {"emoji": "🔎", "homepage": "https://github.com/velarynai/ragora-openclaw", "requires": {"env": ["RAGORA_API_KEY"]}, "primaryEnv": "RAGORA_API_KEY"}}
 ---
 
 # Ragora Skill for OpenClaw
@@ -104,12 +105,14 @@ Claude Desktop / Cursor / VS Code config (JSON):
       "type": "http",
       "url": "https://mcp.ragora.app/mcp",
       "headers": {
-        "Authorization": "Bearer sk_live_xxx"
+        "Authorization": "Bearer ${RAGORA_API_KEY}"
       }
     }
   }
 }
 ```
+
+> **Security note**: Set `RAGORA_API_KEY` as an environment variable in your OS or secret manager. Never hardcode the raw `sk_live_*` value in config files that may be committed to version control.
 
 ### REST API base URL
 

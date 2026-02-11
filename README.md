@@ -59,12 +59,14 @@ headers:
       "type": "http",
       "url": "https://mcp.ragora.app/mcp",
       "headers": {
-        "Authorization": "Bearer sk_live_your_key_here"
+        "Authorization": "Bearer ${RAGORA_API_KEY}"
       }
     }
   }
 }
 ```
+
+> Set `RAGORA_API_KEY` as an environment variable. Never hardcode keys in config files that may be committed to version control.
 
 ### 3. Verify the connection
 
